@@ -34,11 +34,11 @@ let timesTable = (to) => {
 
     if (Number.isInteger(to)) {
     for (let i = 1; i <= to; i++) {
-        let row = ""
-        for (let j = 1; j <= to; j++) {
-            row += `${ i * j }\t`
+        let rowContents = ""
+        for (let col = 1; col <= to; col++) {
+            rowContents += `${ i * col }\t`
         }
-        console.log(row)
+        console.log(rowContents)
     }
     } else {
         console.log(`Sorry, ${to} isn't a number`)
