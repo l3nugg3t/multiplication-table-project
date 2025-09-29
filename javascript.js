@@ -45,8 +45,8 @@ let timesTable = (to) => {
     }
 }
 
-timesTable(4)
-
 timesTable(12)
+
+timesTable(20)
 
 timesTable('x')
