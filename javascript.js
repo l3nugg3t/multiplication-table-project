@@ -54,7 +54,7 @@ function getColumnsDesired(rows) {
 }
 
 function createWithHtmlTable(rows, cols) {
-    let string //defiine a variable called string
+    let string //define a variable called string
     if (rows && cols) {
         string = "<table>\n"
 
