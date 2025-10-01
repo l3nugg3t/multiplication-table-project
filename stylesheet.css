@@ -39,6 +39,13 @@ section.container {
     table, th, td {
         border: 1px solid black;
         border-collapse: collapse;
+
+        tr:first-of-type, tr:last-of-type {
+        background-color: lightblue;
+    }
+        td:first-of-type, td:last-of-type  {
+            background-color: lightgreen;
+        }
     }
 
     table {
