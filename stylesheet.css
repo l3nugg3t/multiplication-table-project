@@ -13,6 +13,7 @@ section.container {
     .generate-box {
         display: flex;
         gap: 10px;
+
         button {
             background-color: pink;
         }
@@ -41,9 +42,10 @@ section.container {
         border-collapse: collapse;
 
         tr:first-of-type, tr:last-of-type {
-        background-color: lightblue;
-    }
-        td:first-of-type, td:last-of-type  {
+            background-color: lightblue;
+        }
+
+        td:first-of-type, td:last-of-type {
             background-color: lightgreen;
         }
     }
@@ -55,6 +57,10 @@ section.container {
             padding: 2px;
             text-align: center;
 
+        }
+
+        .highlight {
+            background-color: darkred;
         }
 
     }
