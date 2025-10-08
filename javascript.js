@@ -59,9 +59,14 @@ function getHighlightValue() {
 }
 
 // this method can be used to replace the 3 duplicates above = less code
-function getInputValue(inputId) {
-    return Number(document.getElementById(inputId).value);
+function getInputValueAsNumber(inputId) {
+        if (document.getElementById(inputId).value !== null) {
+            return Number(document.getElementById(inputId).value)
+        } else {
+            console.log(`Sorry, value isn\'t present for this ID: `, inputId)
+        }
 
+        console.log(`Sorry, couldn\'t find this ID: `, inputId)
 }
 // getRowsDesired() is equivalent to getInputAsNumber("rows")
 // getColsDesired() is equivalent to getInputAsNumber("cols")
@@ -69,7 +74,7 @@ function getInputValue(inputId) {
 
 console.log(`should get value of rows input:`, getInputValueAsNumber('rows'))
 console.log(`should get value of cols input:`, getInputValueAsNumber('cols'));
-console.log(`should get value of highlight input:`, getInputValueAsNumber());
+console.log(`should get value of highlight input:`, getInputValueAsNumber('highlight'));
 
 function createWithHtmlTable(rows, cols, highlight) {
     let string //define a variable called string
