@@ -1,76 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Flexbox Grid Example</title>
-
-    <style>
-        section.columns-of-rows {
-            display: flex;
-
-            div {
-                border: 1px solid black;
-            }
-        }
-
-        section.rows-of-columns {
-            border: 1px solid black;
-            padding: 4px;
-
-            div.row {
-                display: flex;
-                justify-content: space-between;
-                border: 1px solid black;
-                padding: 4px;
-
-                div {
-                    border: 1px solid black;
-                }
-            }
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <title>Multiplication Table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
+<section class="container">
+    <h1>Multiplication Table Project</h1>
+    <h3>Create your own multiplication table that is rendered with flexbox!</h3>
 
+    <div class="generate-box">
+        <div class="inputs">
+            <label for="rows">Rows:
+                <input id="rows" type="number" value="10" placeholder="How many rows?" />
+            </label>
 
-<h1>Tic-tac-toe style grid using three columns of three rows</h1>
-<section class="columns-of-rows">
-    <div>
-        <div>Row 1</div>
-        <div>Row 2</div>
-        <div>Row 3</div>
+            <label for="cols">Columns:
+                <input id="cols" type="number" value="10" placeholder="How many cols?" />
+            </label>
+        </div>
+
+        <button id="generate">Generate</button>
     </div>
-    <div>
-        <div>Row 1</div>
-        <div>Row 2</div>
-        <div>Row 3</div>
-    </div>
-    <div>
-        <div>Row 1</div>
-        <div>Row 2</div>
-        <div>Row 3</div>
-    </div>
+
+    <div id="output"></div>
 </section>
 
-<h1>Tic-tac-toe style grid using three rows of three columns</h1>
-
-<section class="rows-of-columns">
-    <div class="row">
-        <div>Col 1</div>
-        <div>Col 2</div>
-        <div>Col 3</div>
-    </div>
-    <div class="row">
-        <div>Col 1</div>
-        <div>Col 2</div>
-        <div>Col 3</div>
-    </div>
-    <div class="row">
-        <div>Col 1</div>
-        <div>Col 2</div>
-        <div>Col 3</div>
-    </div>
-
-</section>
+<script src="flexbox-table.js"></script>
 </body>
 </html>

@@ -1,33 +1,32 @@
-function getRowsDesired() {
-    return parseInt(document.getElementById("rows").value)
+function getInputValueAsNumber(id) {
+    const el = document.getElementById(id);
+    const n = Number(el && el.value);
+    return Number.isFinite(n) ? n : 0;
 }
 
-function getColumnsDesired() {
-    return parseInt(document.getElementById("cols").value)
+function createWithFlexTable(rows, cols, highlight) {
+    let html = "";
+
+    if (rows && cols) {
+        html += '<div class="table">';
+        for (let row = 1; row <= rows; row++) {
+            html += `<div class="t-row${highlight === row ? " highlight" : ""}">`;
+            for (let col = 1; col <= cols; col++) {
+                html += `<div class="t-data">${row * col}</div>`;
+            }
+            html += "</div>";
+        }
+        html += "</div>";
+    } else {
+        html = "<p>Provide some inputs</p>";
+    }
+
+    document.getElementById("output").innerHTML = html;
 }
 
-function createWithFlexbox(rows, cols) {
-    let string = ''
-
-    // first do-while loop to build the flex'd rows
-    let row = 1
-    do {
-        string += "<div class='row'>"
-        string += row
-
-        // second do-while loop to build the flex'd columns
-        let col = 1
-        do {
-            string += "<div class='col'>"
-            string += row * col
-            string += "</div>"
-
-            col = col + 1
-        } while (col <= cols)
-        string += "</div>\n"
-
-        row = row + 1;
-    } while (row <= rows)
-
-    document.getElementById("output").innerHTML = string
-}
+// Wire up the button (avoid inline onClick)
+document.getElementById("generate").addEventListener("click", () => {
+    const rows = getInputValueAsNumber("rows");
+    const cols = getInputValueAsNumber("cols");
+    createWithFlexTable(rows, cols);
+});
